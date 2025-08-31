@@ -1,5 +1,5 @@
 {
-    "name": "Quest Adventure",
+    "name": "Quest Adventure", 
     "short_name": "Quest",
     "description": "Un jeu de quête simple et amusant",
     "start_url": "/Quest_Adventure/index.html",
@@ -10,22 +10,16 @@
     "orientation": "any",
     "icons": [
         {
-            "src": "/Quest_Adventure/icon-192.png",
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%23667eea' rx='20'/%3E%3Ctext x='96' y='120' font-size='80' fill='white' text-anchor='middle' font-family='system-ui,sans-serif'%3E🏰%3C/text%3E%3C/svg%3E",
             "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any"
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
         },
         {
-            "src": "/Quest_Adventure/icon-512.png", 
-            "sizes": "512x512",
-            "type": "image/png",
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23667eea' rx='50'/%3E%3Ctext x='256' y='320' font-size='200' fill='white' text-anchor='middle' font-family='system-ui,sans-serif'%3E🏰%3C/text%3E%3C/svg%3E",
+            "sizes": "512x512", 
+            "type": "image/svg+xml",
             "purpose": "any"
-        },
-        {
-            "src": "/Quest_Adventure/icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable"
         }
     ]
 }
