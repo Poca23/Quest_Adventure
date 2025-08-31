@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="screen active">
+            <h1>🏰 Quest Adventure</h1>
+            <div class="avatar-selection">
+                <h3>Choisissez votre avatar :</h3>
+                <div class="avatars">
+                    <div class="avatar" data-avatar="🤴">🤴 Prince</div>
+                    <div class="avatar" data-avatar="🥷">🥷 Ninja</div>
+                    <div class="avatar" data-avatar="🧙‍♂️">🧙‍♂️ Magicien</div>
+                </div>
+            </div>
+            <div class="difficulty-selection">
+                <h3>Difficulté :</h3>
+                <div class="difficulties">
+                    <button class="difficulty" data-difficulty="easy">Facile</button>
+                    <button class="difficulty" data-difficulty="medium">Moyen</button>
+                    <button class="difficulty" data-difficulty="hard">Difficile</button>
+                </div>
+            </div>
+            <button id="start-game" disabled>Commencer l'aventure</button>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div id="hud">
+                <div id="stats">
+                    <span id="level-info">Niveau 1/10</span>
+                    <span id="health">❤️ 100</span>
+                    <span id="rewards">🏆 0/30</span>
+                    <button id="heal-btn">💊 Soigner (1)</button>
+                    <button id="regen-btn">🔄 Nouvelle map</button>
+                    <button id="restart-level-btn">🔄 Recommencer</button>
+                    <button id="quit-btn">❌ Abandonner</button>
+                </div>
+                <div id="story-text"></div>
+            </div>
+
+            <div id="game-board"></div>
+
+            <div id="controls">
+                <div class="control-row">
+                    <button class="control-btn" data-direction="up">⬆️</button>
+                </div>
+                <div class="control-row">
+                    <button class="control-btn" data-direction="left">⬅️</button>
+                    <button class="control-btn" data-direction="down">⬇️</button>
+                    <button class="control-btn" data-direction="right">➡️</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="end-screen" class="screen">
+            <h2 id="end-title"></h2>
+            <p id="end-message"></p>
+            <button id="restart-game">Recommencer</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
