@@ -221,12 +221,12 @@ body {
 }
 
 .control-btn {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border: none;
     border-radius: 10px;
     background: rgba(255,255,255,0.8);
-    font-size: 1.5rem;
+    font-size: 3rem;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -282,9 +282,9 @@ body {
     }
     
     .control-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
     }
 }
 
@@ -298,9 +298,9 @@ body {
     }
     
     .control-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
     }
     
     #stats {
