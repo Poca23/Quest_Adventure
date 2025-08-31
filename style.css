@@ -2,6 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Désactiver le zoom et les interactions tactiles problématiques */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    /* Empêcher le zoom complètement */
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 body {
@@ -9,12 +22,20 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     height: 100vh;
     overflow: hidden;
+    /* Empêcher le zoom et le scroll */
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+    position: fixed;
+    width: 100%;
 }
 
 #game-container {
     width: 100vw;
     height: 100vh;
     position: relative;
+    /* Empêcher le zoom sur le conteneur principal */
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
 }
 
 .screen {
@@ -58,6 +79,8 @@ body {
     background: rgba(255,255,255,0.1);
     transition: all 0.3s;
     min-width: 100px;
+    /* Optimiser le touch sur mobile */
+    touch-action: manipulation;
 }
 
 .avatar:hover, .avatar.selected {
@@ -74,6 +97,8 @@ body {
     background: rgba(255,255,255,0.2);
     color: white;
     transition: all 0.3s;
+    /* Optimiser le touch */
+    touch-action: manipulation;
 }
 
 .difficulty:hover, .difficulty.selected {
@@ -90,6 +115,7 @@ body {
     cursor: pointer;
     margin-top: 2rem;
     transition: all 0.3s;
+    touch-action: manipulation;
 }
 
 #start-game:disabled {
@@ -130,6 +156,8 @@ body {
     cursor: pointer;
     font-size: 0.8rem;
     transition: all 0.2s;
+    /* Empêcher le zoom sur les boutons */
+    touch-action: manipulation;
 }
 
 #regen-btn {
@@ -172,6 +200,8 @@ body {
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 1rem;
+    /* Crucial : empêcher le zoom sur le plateau de jeu */
+    touch-action: manipulation;
 }
 
 .cell {
@@ -182,6 +212,8 @@ body {
     justify-content: center;
     font-size: 1.2rem;
     position: relative;
+    /* Empêcher le zoom sur les cellules */
+    touch-action: manipulation;
 }
 
 .cell.path {
@@ -229,6 +261,8 @@ body {
     font-size: 3rem;
     cursor: pointer;
     transition: all 0.2s;
+    /* Empêcher le zoom sur les boutons de contrôle */
+    touch-action: manipulation;
 }
 
 .control-btn:hover {
@@ -259,6 +293,7 @@ body {
     color: white;
     cursor: pointer;
     margin-top: 1rem;
+    touch-action: manipulation;
 }
 
 /* Responsive */
@@ -266,21 +301,21 @@ body {
     #start-screen h1 {
         font-size: 2rem;
     }
-    
+
     .avatars, .difficulties {
         flex-direction: column;
         align-items: center;
     }
-    
+
     #stats {
         font-size: 0.8rem;
     }
-    
+
     #heal-btn, #regen-btn, #restart-level-btn, #quit-btn {
         font-size: 0.7rem;
         padding: 0.2rem 0.6rem;
     }
-    
+
     .control-btn {
         width: 70px;
         height: 70px;
@@ -292,22 +327,22 @@ body {
     #game-screen {
         padding: 0.5rem;
     }
-    
+
     #game-board {
         max-width: 300px;
     }
-    
+
     .control-btn {
         width: 70px;
         height: 70px;
         font-size: 1.8rem;
     }
-    
+
     #stats {
         justify-content: center;
         gap: 0.3rem;
     }
-    
+
     #heal-btn, #regen-btn, #restart-level-btn, #quit-btn {
         font-size: 0.6rem;
         padding: 0.15rem 0.4rem;
@@ -322,3 +357,12 @@ body {
 .bg-fire { background: linear-gradient(135deg, #ff7043 0%, #d84315 100%); }
 .bg-clouds { background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); }
 .bg-stars { background: linear-gradient(135deg, #1a237e 0%, #000051 100%); }
+
+/* Fixes spécifiques pour iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    body {
+        -webkit-touch-callout: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+}
